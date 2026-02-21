@@ -3,36 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="<meta name="google-site-verification" content="TMotgq2PqBI0aobWIhU5AAs7xbERVHxYcT37PGgfbaE" />" />
-<title>Pomodoro ENEM e Concursos - Timer de Estudo Gratuito</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3359186733319464"
-     crossorigin="anonymous"></script>
+<title>Pomodoro ENEM e Concursos | Timer de Estudo Online Gratuito</title>
 
-<title>Timer Pomodoro ENEM e Concursos Públicos | Estude com Foco</title>
-
-<meta name="description" content="Timer Pomodoro gratuito para ENEM e concursos públicos. Estude com foco usando ciclos de 25 minutos e aumente sua produtividade.">
-<meta name="keywords" content="timer enem, pomodoro enem, pomodoro concursos, timer de estudo online, estudar para concurso">
+<meta name="description" content="Timer Pomodoro gratuito para ENEM e Concursos Públicos. Estude com foco usando ciclos de 25 minutos. Aumente sua produtividade agora.">
 
 <style>
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f4f6f9;
-    padding: 40px;
     margin: 0;
+    padding: 0;
+    background-color: #f4f6f9;
+    text-align: center;
 }
 
-h1 {
-    color: #222;
+header {
+    background: #1e3a8a;
+    color: white;
+    padding: 15px;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.container {
+    padding: 30px;
 }
 
 #timer {
     font-size: 60px;
     margin: 20px 0;
-    font-weight: bold;
 }
 
 button {
@@ -40,52 +42,67 @@ button {
     margin: 5px;
     font-size: 16px;
     cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: #2c7be5;
-    color: white;
-}
-
-button:hover {
-    background-color: #1a5ed8;
 }
 
 .content {
     max-width: 800px;
     margin: 40px auto;
     text-align: left;
-    line-height: 1.6;
+}
+
+footer {
+    background: #111;
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 14px;
 }
 </style>
 </head>
 
 <body>
 
-<h1>Timer Pomodoro para ENEM e Concursos</h1>
+<header>
+<h1>Pomodoro ENEM e Concursos</h1>
+<nav>
+<a href="#inicio">Início</a>
+<a href="#sobre">Sobre</a>
+<a href="#politica">Política de Privacidade</a>
+</nav>
+</header>
 
+<div class="container" id="inicio">
 <div id="timer">25:00</div>
-
 <button onclick="startTimer()">Iniciar</button>
 <button onclick="pauseTimer()">Pausar</button>
 <button onclick="resetTimer()">Resetar</button>
-
-<div class="content">
-
-<h2>Como usar o método Pomodoro para estudar para o ENEM</h2>
-<p>O método Pomodoro é uma técnica de estudo baseada em blocos de 25 minutos de foco total seguidos por 5 minutos de descanso. Essa estratégia ajuda a manter a concentração e reduzir a procrastinação.</p>
-
-<h2>Pomodoro funciona para concursos públicos?</h2>
-<p>Sim. Muitos candidatos aprovados utilizam ciclos de estudo cronometrados para aumentar o rendimento e melhorar a memorização do conteúdo.</p>
-
-<h2>Dicas para estudar melhor</h2>
-<ul>
-<li>Estude em ciclos de 25 minutos</li>
-<li>Faça pausas curtas de 5 minutos</li>
-<li>Após 4 ciclos, faça uma pausa maior</li>
-<li>Elimine distrações durante o tempo de foco</li>
-</ul>
-
 </div>
+
+<div class="content" id="sobre">
+<h2>Como estudar para o ENEM e Concursos usando Pomodoro</h2>
+<p>O método Pomodoro é uma técnica de produtividade baseada em blocos de 25 minutos de estudo intenso seguidos por 5 minutos de descanso. Essa estratégia ajuda estudantes do ENEM e concursos públicos a manter foco, reduzir distrações e melhorar a retenção do conteúdo.</p>
+
+<h2>Por que usar um timer de estudo?</h2>
+<p>Estudar com um cronômetro aumenta a disciplina e reduz a procrastinação. Muitos candidatos aprovados utilizam o Pomodoro para organizar a rotina e cumprir metas diárias.</p>
+
+<h2>Dicas práticas para melhorar seu desempenho</h2>
+<ul>
+<li>Estude em ambiente silencioso</li>
+<li>Defina metas claras para cada ciclo</li>
+<li>Após 4 ciclos, faça pausa maior (15-30 minutos)</li>
+<li>Revise conteúdos semanalmente</li>
+</ul>
+</div>
+
+<div class="content" id="politica">
+<h2>Política de Privacidade</h2>
+<p>Este site não coleta dados pessoais dos usuários. Podemos utilizar cookies de terceiros, como o Google AdSense, para exibir anúncios relevantes. Ao utilizar este site, você concorda com o uso de cookies conforme políticas do Google.</p>
+<p>Para dúvidas, entre em contato pelo e-mail: contato@exemplo.com</p>
+</div>
+
+<footer>
+<p>© 2026 Pomodoro ENEM e Concursos - Todos os direitos reservados.</p>
+</footer>
 
 <script>
 let time = 1500;
@@ -105,10 +122,6 @@ function startTimer() {
             if (time > 0) {
                 time--;
                 updateDisplay();
-            } else {
-                clearInterval(timerInterval);
-                timerInterval = null;
-                alert("Tempo finalizado! Faça uma pausa.");
             }
         }, 1000);
     }
@@ -131,6 +144,3 @@ updateDisplay();
 
 </body>
 </html>
-
-
-
