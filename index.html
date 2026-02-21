@@ -144,9 +144,9 @@ function gtagEvent(action, label) {
     gtag('event', action, { 'event_label': label });
 }
 
-// Cria som de aviso
-function playSound() {
-    const audio = new Audio("https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg");
+// Tocar som
+function playSound(url) {
+    const audio = new Audio(url);
     audio.play();
 }
 
@@ -158,10 +158,17 @@ function startTimer() {
                 time--;
                 updateDisplay();
             } else {
-                // Quando termina um ciclo
                 cyclesCompleted++;
-                playSound();          // toca o som
-                time = 1500;          // reseta o timer para o próximo ciclo
+
+                // Se completar 4 ciclos, pausa longa
+                if (cyclesCompleted % 4 === 0) {
+                    time = 900; // 15 minutos de pausa longa
+                    playSound("https://actions.google.com/sounds/v1/alarms/bugle_tune.ogg"); // som diferente
+                } else {
+                    time = 1500; // 25 minutos
+                    playSound("https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg"); // som padrão
+                }
+
                 updateDisplay();
             }
         }, 1000);
@@ -191,4 +198,3 @@ updateDisplay(); // mostra valores iniciais
 
 </body>
 </html>
-
