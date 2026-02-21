@@ -43,62 +43,18 @@ crossorigin="anonymous"></script>
 -->
 
 <style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f4f6f9;
-    line-height: 1.6;
-    text-align: center;
-}
-header {
-    background: #1e3a8a;
-    color: white;
-    padding: 20px;
-}
-nav a {
-    color: white;
-    margin: 0 12px;
-    text-decoration: none;
-    font-weight: bold;
-}
-.container {
-    padding: 30px;
-}
-#timer {
-    font-size: 70px;
-    font-weight: bold;
-    margin: 20px 0;
-}
-button {
-    padding: 12px 22px;
-    margin: 5px;
-    font-size: 16px;
-    cursor: pointer;
-}
-.content {
-    max-width: 900px;
-    margin: 40px auto;
-    text-align: left;
-    padding: 0 20px;
-}
-footer {
-    background: #111;
-    color: white;
-    padding: 25px;
-    margin-top: 40px;
-    font-size: 14px;
-}
+body { font-family: Arial, sans-serif; margin:0; background:#f4f6f9; line-height:1.6; text-align:center; }
+header { background:#1e3a8a; color:white; padding:20px; }
+nav a { color:white; margin:0 12px; text-decoration:none; font-weight:bold; }
+.container { padding:30px; }
+#timer { font-size:70px; font-weight:bold; margin:20px 0; }
+#cycles { font-size:20px; margin:10px 0; }
+button { padding:12px 22px; margin:5px; font-size:16px; cursor:pointer; }
+.content { max-width:900px; margin:40px auto; text-align:left; padding:0 20px; }
+footer { background:#111; color:white; padding:25px; margin-top:40px; font-size:14px; }
 </style>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YEQPPW3JF1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-YEQPPW3JF1');
-</script>
 <body>
 
 <header>
@@ -117,6 +73,7 @@ footer {
 <section class="container" id="inicio">
 <h2>Timer Pomodoro Online</h2>
 <div id="timer">25:00</div>
+<div id="cycles">Ciclos concluídos: 0</div>
 <button onclick="startTimer()">Iniciar</button>
 <button onclick="pauseTimer()">Pausar</button>
 <button onclick="resetTimer()">Resetar</button>
@@ -168,27 +125,43 @@ footer {
 </footer>
 
 <script>
-let time = 1500;
+let time = 1500; // 25 minutos
 let timerInterval;
+let cyclesCompleted = 0;
 
+// Atualiza o display do timer e dos ciclos
 function updateDisplay() {
     let minutes = Math.floor(time / 60);
     let seconds = time % 60;
     document.getElementById("timer").innerText =
         (minutes < 10 ? "0" : "") + minutes + ":" +
         (seconds < 10 ? "0" : "") + seconds;
+    document.getElementById("cycles").innerText = "Ciclos concluídos: " + cyclesCompleted;
 }
 
-// função para enviar eventos ao GA4
+// Envia eventos para GA4
 function gtagEvent(action, label) {
     gtag('event', action, { 'event_label': label });
 }
 
+// Cria som de aviso
+function playSound() {
+    const audio = new Audio("https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg");
+    audio.play();
+}
+
+// Inicia o timer
 function startTimer() {
     if (!timerInterval) {
         timerInterval = setInterval(() => {
             if (time > 0) {
                 time--;
+                updateDisplay();
+            } else {
+                // Quando termina um ciclo
+                cyclesCompleted++;
+                playSound();          // toca o som
+                time = 1500;          // reseta o timer para o próximo ciclo
                 updateDisplay();
             }
         }, 1000);
@@ -196,22 +169,26 @@ function startTimer() {
     }
 }
 
+// Pausa o timer
 function pauseTimer() {
     clearInterval(timerInterval);
     timerInterval = null;
     gtagEvent('Timer', 'Pausado');
 }
 
+// Reseta o timer e ciclos
 function resetTimer() {
     clearInterval(timerInterval);
     timerInterval = null;
     time = 1500;
+    cyclesCompleted = 0;
     updateDisplay();
     gtagEvent('Timer', 'Resetado');
 }
+
+updateDisplay(); // mostra valores iniciais
 </script>
 
 </body>
 </html>
-
 
