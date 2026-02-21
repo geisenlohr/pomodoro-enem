@@ -6,7 +6,7 @@
 
 <title>Pomodoro ENEM e Concursos | Timer de Estudo Online Gratuito</title>
 
-<meta name="description" content="Timer Pomodoro gratuito para ENEM e concursos públicos. Aumente seu foco com ciclos de 25 minutos e organize seus estudos com eficiência.">
+<meta name="description" content="Timer Pomodoro gratuito para ENEM e concursos públicos. Estude com foco usando ciclos de 25 minutos e aumente sua produtividade.">
 <meta name="keywords" content="pomodoro enem, pomodoro concursos, timer de estudo online, cronômetro enem, método pomodoro estudo">
 <meta name="author" content="Pomodoro ENEM e Concursos">
 
@@ -27,7 +27,16 @@
 }
 </script>
 
-<!-- Google AdSense (substitua pelo seu código real depois da aprovação) -->
+<!-- Google Tag (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YEQPPW3JF1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YEQPPW3JF1');
+</script>
+
+<!-- Google AdSense (substitua pelo seu código depois da aprovação) -->
 <!--
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=SEU-CODIGO"
 crossorigin="anonymous"></script>
@@ -41,44 +50,37 @@ body {
     line-height: 1.6;
     text-align: center;
 }
-
 header {
     background: #1e3a8a;
     color: white;
     padding: 20px;
 }
-
 nav a {
     color: white;
     margin: 0 12px;
     text-decoration: none;
     font-weight: bold;
 }
-
 .container {
     padding: 30px;
 }
-
 #timer {
     font-size: 70px;
     font-weight: bold;
     margin: 20px 0;
 }
-
 button {
     padding: 12px 22px;
     margin: 5px;
     font-size: 16px;
     cursor: pointer;
 }
-
 .content {
     max-width: 900px;
     margin: 40px auto;
     text-align: left;
     padding: 0 20px;
 }
-
 footer {
     background: #111;
     color: white;
@@ -122,6 +124,8 @@ footer {
 <li>Aumenta a produtividade</li>
 <li>Organiza o cronograma</li>
 </ul>
+<h3>Dica prática</h3>
+<p>Após completar 4 ciclos de 25 minutos, faça uma pausa maior de 15 a 30 minutos para recuperar energia mental.</p>
 </section>
 
 <section class="content" id="faq">
@@ -130,12 +134,16 @@ footer {
 <p>Sim. Muitos estudantes usam essa técnica para manter disciplina e consistência.</p>
 <h3>Quantos ciclos devo fazer?</h3>
 <p>Entre 6 e 12 ciclos por dia é comum para estudantes dedicados.</p>
+<h3>Este site é gratuito?</h3>
+<p>Sim. O uso é totalmente gratuito.</p>
+<h3>O site coleta dados?</h3>
+<p>Não coletamos dados pessoais identificáveis. Podemos usar cookies de terceiros para anúncios.</p>
 </section>
 
 <section class="content" id="politica">
 <h2>Política de Privacidade</h2>
 <p>Este site não coleta informações pessoais identificáveis.</p>
-<p>Podemos utilizar serviços como o Google AdSense, que utilizam cookies para exibir anúncios personalizados.</p>
+<p>Podemos utilizar serviços como o Google AdSense, que usam cookies para personalizar anúncios.</p>
 <p>Ao utilizar o site, você concorda com o uso de cookies.</p>
 </section>
 
@@ -163,6 +171,11 @@ function updateDisplay() {
         (seconds < 10 ? "0" : "") + seconds;
 }
 
+// função para enviar eventos ao GA4
+function gtagEvent(action, label) {
+    gtag('event', action, { 'event_label': label });
+}
+
 function startTimer() {
     if (!timerInterval) {
         timerInterval = setInterval(() => {
@@ -171,12 +184,14 @@ function startTimer() {
                 updateDisplay();
             }
         }, 1000);
+        gtagEvent('Timer', 'Iniciado');
     }
 }
 
 function pauseTimer() {
     clearInterval(timerInterval);
     timerInterval = null;
+    gtagEvent('Timer', 'Pausado');
 }
 
 function resetTimer() {
@@ -184,6 +199,7 @@ function resetTimer() {
     timerInterval = null;
     time = 1500;
     updateDisplay();
+    gtagEvent('Timer', 'Resetado');
 }
 </script>
 
