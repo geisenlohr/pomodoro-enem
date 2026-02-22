@@ -1,4 +1,6 @@
-/* Reset básico */
+/* =========================
+   RESET
+========================= */
 * {
     margin: 0;
     padding: 0;
@@ -7,144 +9,195 @@
 
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    background: #f4f6fb;
-    color: #333;
+    background: #f1f5f9;
+    color: #1f2937;
     line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Header */
+/* =========================
+   HEADER
+========================= */
 header {
     background: linear-gradient(135deg, #1e3a8a, #2563eb);
     color: white;
-    padding: 25px 20px;
+    padding: 40px 20px;
     text-align: center;
 }
 
 header h1 {
-    font-size: 28px;
+    font-size: 30px;
+    font-weight: 600;
     margin-bottom: 10px;
 }
 
-/* Navegação */
+header p {
+    opacity: 0.9;
+    font-size: 16px;
+}
+
+/* =========================
+   NAV
+========================= */
 nav {
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 12px;
+    margin: 0 15px;
     font-weight: 500;
-    transition: 0.3s;
+    transition: opacity 0.3s ease;
 }
 
 nav a:hover {
-    opacity: 0.7;
+    opacity: 0.75;
 }
 
-/* Container principal */
+/* =========================
+   MAIN CONTAINER
+========================= */
 main {
     max-width: 1000px;
-    margin: 40px auto;
+    margin: 60px auto;
     padding: 0 20px;
 }
 
-/* Seções */
+/* =========================
+   SEÇÕES
+========================= */
 section {
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
-/* Títulos */
+/* =========================
+   TÍTULOS
+========================= */
 h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
+    font-size: 26px;
+    margin-bottom: 20px;
     color: #1e3a8a;
+    font-weight: 600;
 }
 
 h3 {
     margin-top: 20px;
     margin-bottom: 10px;
+    font-weight: 600;
 }
 
-/* Parágrafos */
+/* =========================
+   TEXTO
+========================= */
 p {
     margin-bottom: 15px;
+    font-size: 16px;
 }
 
-/* Listas */
 ul {
     margin-left: 20px;
     margin-bottom: 20px;
 }
 
-/* Timer */
+/* =========================
+   CARD BASE
+========================= */
+.card {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    margin-bottom: 30px;
+}
+
+/* =========================
+   CARD DO TIMER (DESTAQUE)
+========================= */
+.timer-card {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
 #timer {
-    font-size: 70px;
-    font-weight: bold;
-    margin: 20px 0;
+    font-size: 72px;
+    font-weight: 700;
+    margin: 25px 0;
     color: #1e3a8a;
 }
 
 #cycles {
     font-size: 18px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    color: #6b7280;
 }
 
-/* Botões */
+/* =========================
+   BOTÕES
+========================= */
 button {
     background: #2563eb;
     color: white;
     border: none;
-    padding: 12px 24px;
-    margin: 5px;
+    padding: 14px 28px;
+    margin: 6px;
     font-size: 16px;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: 0.3s;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 button:hover {
     background: #1e40af;
+    transform: translateY(-2px);
 }
 
-/* Cards */
-.card {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-    margin-bottom: 25px;
-}
-
-/* Footer */
-footer {
-    background: #111827;
-    color: white;
-    text-align: center;
-    padding: 30px 20px;
-    margin-top: 50px;
-    font-size: 14px;
-}
-
-/* Links */
+/* =========================
+   LINKS
+========================= */
 a {
     color: #2563eb;
+    text-decoration: none;
 }
 
 a:hover {
     text-decoration: underline;
 }
 
-/* Responsivo */
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background: #0f172a;
+    color: #e5e7eb;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 80px;
+    font-size: 14px;
+}
+
+footer a {
+    color: #93c5fd;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
 @media (max-width: 768px) {
-    #timer {
-        font-size: 50px;
-    }
-
     header h1 {
-        font-size: 22px;
+        font-size: 24px;
     }
 
+    #timer {
+        font-size: 56px;
+    }
+
+    .card {
+        padding: 25px;
+    }
+}
     nav a {
         display: inline-block;
         margin: 8px 5px;
