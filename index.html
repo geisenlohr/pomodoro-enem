@@ -11,68 +11,79 @@
 <meta name="keywords" content="pomodoro enem, pomodoro concursos, timer de estudo online, cronômetro enem, método pomodoro estudo">
 <meta name="author" content="Pomodoro ENEM e Concursos">
 
-<!-- Open Graph -->
 <meta property="og:title" content="Pomodoro ENEM e Concursos - Timer Gratuito">
 <meta property="og:description" content="Organize seus estudos com o método Pomodoro e aumente sua produtividade.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://pomodoro-enem.vercel.app/">
 
-<!-- CSS Externo -->
 <link rel="stylesheet" href="style.css">
 
-<!-- Google Analytics (GA4) -->
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YEQPPW3JF1"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-YEQPPW3JF1');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-YEQPPW3JF1');
 </script>
-
-<!-- Google AdSense (ativar apenas após aprovação) -->
-<!--
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=SEU-CODIGO"
-crossorigin="anonymous"></script>
--->
 
 </head>
 
 <body>
 
-<header>
-<h1>Pomodoro ENEM e Concursos</h1>
-<nav>
-<a href="#inicio">Início</a>
-<a href="#metodo">Método</a>
-<a href="#faq">FAQ</a>
-<a href="#politica">Política</a>
-<a href="#contato">Contato</a>
-</nav>
+<header class="header">
+  <div class="container">
+    <h1>Pomodoro ENEM e Concursos</h1>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#timer">Timer</a>
+      <a href="#metodo">Método</a>
+      <a href="#faq">FAQ</a>
+      <a href="#politica">Política</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
 </header>
 
 <main>
 
-<section id="inicio">
-  <div class="card" style="text-align:center;">
-    
-    <h2>Timer Pomodoro Online</h2>
-    
-    <div id="timer">25:00</div>
-    
-    <div id="cycles">Ciclos concluídos: 0</div>
-    
-    <button onclick="startTimer()">Iniciar</button>
-    <button onclick="pauseTimer()">Pausar</button>
-    <button onclick="resetTimer()">Resetar</button>
-    
-    <p style="margin-top:15px;">
-      Estude com ciclos de 25 minutos de foco e 5 minutos de descanso.
-    </p>
-
+<!-- HERO -->
+<section id="inicio" class="hero">
+  <div class="container">
+    <h2>Estude com foco. Passe no ENEM e Concursos.</h2>
+    <p>Use o método Pomodoro para organizar seus estudos, aumentar sua concentração e melhorar seus resultados.</p>
+    <a href="#timer" class="btn-primary">Começar agora</a>
   </div>
 </section>
 
+<!-- TIMER -->
+<section id="timer" class="timer-section">
+  <div class="container">
+    <div class="timer-card">
+
+      <h2>Timer Pomodoro Online</h2>
+
+      <div id="timer-display">25:00</div>
+
+      <div id="cycles">Ciclos concluídos: 0</div>
+
+      <div class="buttons">
+        <button onclick="startTimer()">Iniciar</button>
+        <button onclick="pauseTimer()">Pausar</button>
+        <button onclick="resetTimer()">Resetar</button>
+      </div>
+
+      <p class="timer-description">
+        25 minutos de foco + 5 minutos de descanso.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+<!-- MÉTODO -->
 <section class="content" id="metodo">
+<div class="container">
 <h2>Como o Método Pomodoro Ajuda no ENEM e Concursos</h2>
 <p>O método Pomodoro divide o estudo em blocos de tempo focado com pequenas pausas estratégicas. Essa técnica aumenta a concentração, reduz a procrastinação e melhora a retenção de conteúdo.</p>
 <ul>
@@ -83,66 +94,81 @@ crossorigin="anonymous"></script>
 </ul>
 <h3>Dica prática</h3>
 <p>Após completar 4 ciclos de 25 minutos, faça uma pausa maior de 15 a 30 minutos para recuperar energia mental.</p>
+</div>
 </section>
 
-<section class="content" id="faq">
+<!-- FAQ -->
+<section class="content light-bg" id="faq">
+<div class="container">
 <h2>Perguntas Frequentes</h2>
+
 <h3>Funciona para o ENEM?</h3>
-<p>Sim. Muitos estudantes usam essa técnica para manter disciplina e consistência.</p>
+<p>Sim. Muitos estudantes utilizam essa técnica para manter disciplina e consistência nos estudos.</p>
+
 <h3>Quantos ciclos devo fazer?</h3>
 <p>Entre 6 e 12 ciclos por dia é comum para estudantes dedicados.</p>
+
 <h3>Este site é gratuito?</h3>
 <p>Sim. O uso é totalmente gratuito.</p>
+
 <h3>O site coleta dados?</h3>
-<p>Não coletamos dados pessoais identificáveis. Podemos usar cookies de terceiros para anúncios.</p>
+<p>Não coletamos dados pessoais identificáveis. Podemos usar cookies de terceiros para estatísticas e anúncios.</p>
+</div>
 </section>
 
+<!-- POLÍTICA -->
 <section class="content" id="politica">
+<div class="container">
 <h2>Política de Privacidade</h2>
 <p>Este site não coleta informações pessoais identificáveis.</p>
-<p>Podemos utilizar serviços como o Google AdSense, que usam cookies para personalizar anúncios.</p>
+<p>Podemos utilizar serviços como Google Analytics e Google AdSense, que utilizam cookies.</p>
 <p>Ao utilizar o site, você concorda com o uso de cookies.</p>
+</div>
 </section>
 
-<section class="content" id="contato">
+<!-- CONTATO -->
+<section class="content light-bg" id="contato">
+<div class="container">
 <h2>Contato</h2>
 <p>Para dúvidas ou sugestões:</p>
 <p><strong>theoldtradition@gmail.com</strong></p>
+</div>
 </section>
 
 </main>
 
 <footer>
+<div class="container">
 <p>© 2026 Pomodoro ENEM e Concursos – Todos os direitos reservados.</p>
+</div>
 </footer>
 
 <script>
-let time = 1500; // 25 minutos
+let time = 1500;
 let timerInterval;
 let cyclesCompleted = 0;
 
-// Atualiza o display do timer e dos ciclos
 function updateDisplay() {
     let minutes = Math.floor(time / 60);
     let seconds = time % 60;
-    document.getElementById("timer").innerText =
+
+    document.getElementById("timer-display").innerText =
         (minutes < 10 ? "0" : "") + minutes + ":" +
         (seconds < 10 ? "0" : "") + seconds;
-    document.getElementById("cycles").innerText = "Ciclos concluídos: " + cyclesCompleted;
+
+    document.getElementById("cycles").innerText =
+        "Ciclos concluídos: " + cyclesCompleted;
 }
 
-// Envia eventos para GA4
 function gtagEvent(action, label) {
     gtag('event', action, { 'event_label': label });
 }
 
-// Tocar som
 function playSound(url) {
     const audio = new Audio(url);
     audio.play();
 }
 
-// Inicia o timer
 function startTimer() {
     if (!timerInterval) {
         timerInterval = setInterval(() => {
@@ -152,30 +178,28 @@ function startTimer() {
             } else {
                 cyclesCompleted++;
 
-                // Se completar 4 ciclos, pausa longa
                 if (cyclesCompleted % 4 === 0) {
-                    time = 900; // 15 minutos de pausa longa
-                    playSound("https://actions.google.com/sounds/v1/alarms/bugle_tune.ogg"); // som diferente
+                    time = 900;
+                    playSound("https://actions.google.com/sounds/v1/alarms/bugle_tune.ogg");
                 } else {
-                    time = 1500; // 25 minutos
-                    playSound("https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg"); // som padrão
+                    time = 1500;
+                    playSound("https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg");
                 }
 
                 updateDisplay();
             }
         }, 1000);
+
         gtagEvent('Timer', 'Iniciado');
     }
 }
 
-// Pausa o timer
 function pauseTimer() {
     clearInterval(timerInterval);
     timerInterval = null;
     gtagEvent('Timer', 'Pausado');
 }
 
-// Reseta o timer e ciclos
 function resetTimer() {
     clearInterval(timerInterval);
     timerInterval = null;
@@ -185,10 +209,8 @@ function resetTimer() {
     gtagEvent('Timer', 'Resetado');
 }
 
-updateDisplay(); // mostra valores iniciais
+updateDisplay();
 </script>
 
 </body>
 </html>
-
-
