@@ -70,14 +70,24 @@ footer { background:#111; color:white; padding:25px; margin-top:40px; font-size:
 
 <main>
 
-<section class="container" id="inicio">
-<h2>Timer Pomodoro Online</h2>
-<div id="timer">25:00</div>
-<div id="cycles">Ciclos concluídos: 0</div>
-<button onclick="startTimer()">Iniciar</button>
-<button onclick="pauseTimer()">Pausar</button>
-<button onclick="resetTimer()">Resetar</button>
-<p>Estude com ciclos de 25 minutos de foco e 5 minutos de descanso.</p>
+<section id="inicio">
+  <div class="card" style="text-align:center;">
+    
+    <h2>Timer Pomodoro Online</h2>
+    
+    <div id="timer">25:00</div>
+    
+    <div id="cycles">Ciclos concluídos: 0</div>
+    
+    <button onclick="startTimer()">Iniciar</button>
+    <button onclick="pauseTimer()">Pausar</button>
+    <button onclick="resetTimer()">Resetar</button>
+    
+    <p style="margin-top:15px;">
+      Estude com ciclos de 25 minutos de foco e 5 minutos de descanso.
+    </p>
+
+  </div>
 </section>
 
 <section class="content" id="metodo">
@@ -198,3 +208,4 @@ updateDisplay(); // mostra valores iniciais
 
 </body>
 </html>
+
