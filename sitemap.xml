@@ -1,9 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://pomodoro-enem.vercel.app/</loc>
-    <lastmod>2026-02-21</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <url>
+    <loc>https://pomodoro-enem.vercel.app/sobre.html</loc>
+  </url>
+
+  <url>
+    <loc>https://pomodoro-enem.vercel.app/guia-completo-pomodoro-enem.html</loc>
+  </url>
+
+  <url>
+    <loc>https://pomodoro-enem.vercel.app/guia-pomodoro-concursos.html</loc>
+  </url>
+
+  <url>
+    <loc>https://pomodoro-enem.vercel.app/plano-de-estudos-30-dias.html</loc>
+  </url>
+
+  <url>
+    <loc>https://pomodoro-enem.vercel.app/tecnicas-de-concentracao.html</loc>
+  </url>
+
 </urlset>
+
